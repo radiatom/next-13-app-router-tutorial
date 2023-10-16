@@ -11,8 +11,9 @@ const getPost = async (id:string) => {
     return respons.json();
 };
 export async function generateMetadata({ params }: any) {
+  const post = await getPost(params.id)
     return {
-        title: params.id,
+        title: post.title,
     };
 }
 const Page: React.FC<propsType> = async ({ params: { id } }) => {
