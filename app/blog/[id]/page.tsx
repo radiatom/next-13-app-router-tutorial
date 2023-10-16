@@ -8,6 +8,7 @@ type propsType = {
 
 const getPost = async (id:string) => {
     const respons = await fetch(`https://jsonplaceholder.typicode.com/posts/${id}`);
+    if(!respons.ok) throw new Error("Erorr request getPost in [id]")
     return respons.json();
 };
 export async function generateMetadata({ params }: any) {

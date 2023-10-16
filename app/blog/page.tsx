@@ -4,6 +4,7 @@ import React from "react";
 
 const getData = async () => {
     const response = await fetch("https://jsonplaceholder.typicode.com/posts");
+    if(!response.ok) throw new Error("Erorr request getData in blog")
     return response.json();
 };
 
